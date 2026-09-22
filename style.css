@@ -1,1 +1,298 @@
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f8fafc;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #123252,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #06111f,
+            #0d1b2d
+        );
+}
+
+.container {
+    width: min(900px, 92%);
+    margin: auto;
+    padding: 50px 0 25px;
+}
+
+.card {
+    max-width: 720px;
+    margin: auto;
+    padding: 40px;
+
+    border: 1px solid #26384e;
+    border-radius: 24px;
+
+    background: rgba(13, 27, 45, 0.96);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.4);
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 8px 12px;
+
+    border-radius: 50px;
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    color: #bae6fd;
+    background: #0e3048;
+}
+
+.badge.danger {
+    color: #fecdd3;
+    background: #3d1824;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+
+    margin: 25px auto 18px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #60a5fa,
+            #38bdf8
+        );
+
+    color: #03111e;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1,
+h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+.subtitle {
+    color: #a9b7c8;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.warning {
+    margin: 25px 0;
+    padding: 15px;
+
+    border: 1px solid #542633;
+    border-radius: 12px;
+
+    background: #24131a;
+
+    color: #fecdd3;
+
+    font-size: 14px;
+}
+
+label {
+    display: block;
+
+    margin: 16px 0 8px;
+
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #33465d;
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #07111f;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+input:focus {
+    border-color: #60a5fa;
+}
+
+button,
+.button {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 23px;
+
+    padding: 14px;
+
+    border: 0;
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #60a5fa,
+            #38bdf8
+        );
+
+    color: #03111e;
+
+    text-align: center;
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.note {
+    margin-top: 17px;
+
+    color: #7f91a7;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+.result-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #3d1824;
+
+    color: #fb7185;
+
+    font-size: 38px;
+
+    font-weight: bold;
+}
+
+.lesson {
+    margin: 28px 0;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: #0b2b3d;
+
+    color: #bae6fd;
+}
+
+h3 {
+    margin-top: 30px;
+}
+
+.tips {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.tip {
+    display: flex;
+
+    gap: 14px;
+
+    padding: 18px;
+
+    border: 1px solid #26384e;
+    border-radius: 16px;
+
+    background: #091625;
+}
+
+.tip span {
+    color: #7dd3fc;
+
+    font-weight: bold;
+
+    font-family: Consolas, monospace;
+}
+
+.tip h4 {
+    margin: 0 0 8px;
+}
+
+.tip p {
+    margin: 0;
+
+    color: #a9b7c8;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+footer {
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #718297;
+
+    font-size: 12px;
+}
+
+@media (max-width: 650px) {
+
+    .card {
+        padding: 25px 20px;
+    }
+
+    .tips {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+}
