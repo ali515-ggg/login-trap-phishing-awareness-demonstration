@@ -8,23 +8,17 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>
-        Login Trap - Phishing Awareness
-    </title>
+    <title>Login Trap - Phishing Awareness</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
 
 </head>
-
 
 <body>
 
     <main class="container">
 
-        {% if not simulation_triggered %}
-
-        <section class="card">
+        <section class="card" id="loginPage">
 
             <div class="badge">
                 CYBERSECURITY AWARENESS DEMO
@@ -53,7 +47,7 @@
             </div>
 
 
-            <form method="POST">
+            <form id="loginForm">
 
                 <label for="username">
                     Username
@@ -61,7 +55,6 @@
 
                 <input
                     id="username"
-                    name="username"
                     type="text"
                     placeholder="Enter demo username"
                     autocomplete="off"
@@ -75,7 +68,6 @@
 
                 <input
                     id="password"
-                    name="password"
                     type="password"
                     placeholder="Enter any demo password"
                     autocomplete="off"
@@ -101,10 +93,7 @@
         </section>
 
 
-        {% else %}
-
-
-        <section class="card result">
+        <section class="card result" id="resultPage">
 
             <div class="result-icon">
                 !
@@ -163,10 +152,8 @@
                         </h4>
 
                         <p>
-
                             Look carefully at the
                             domain name and spelling.
-
                         </p>
 
                     </div>
@@ -187,10 +174,8 @@
                         </h4>
 
                         <p>
-
                             A professional-looking
                             page can still be fake.
-
                         </p>
 
                     </div>
@@ -211,10 +196,8 @@
                         </h4>
 
                         <p>
-
                             Never enter your real
                             password on an unknown website.
-
                         </p>
 
                     </div>
@@ -235,11 +218,9 @@
                         </h4>
 
                         <p>
-
                             Visit the official website
                             directly instead of following
                             suspicious links.
-
                         </p>
 
                     </div>
@@ -250,15 +231,15 @@
             </div>
 
 
-            <a href="/" class="button">
+            <button
+                class="button"
+                onclick="runDemoAgain()">
 
                 Run Demo Again
 
-            </a>
+            </button>
 
         </section>
-
-        {% endif %}
 
 
         <footer>
@@ -270,6 +251,55 @@
         </footer>
 
     </main>
+
+
+    <script>
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginPage =
+            document.getElementById("loginPage");
+
+        const resultPage =
+            document.getElementById("resultPage");
+
+
+        loginForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                /*
+                 * Educational simulation only.
+                 * No username or password is stored,
+                 * printed, or sent anywhere.
+                 */
+
+                loginPage.style.display = "none";
+
+                resultPage.style.display = "block";
+
+                window.scrollTo(0, 0);
+
+            }
+        );
+
+
+        function runDemoAgain() {
+
+            resultPage.style.display = "none";
+
+            loginPage.style.display = "block";
+
+            loginForm.reset();
+
+            window.scrollTo(0, 0);
+
+        }
+
+    </script>
 
 </body>
 
