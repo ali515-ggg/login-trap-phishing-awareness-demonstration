@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Login Trap - Phishing Awareness
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        {% if not simulation_triggered %}
+
+        <section class="card">
+
+            <div class="badge">
+                CYBERSECURITY AWARENESS DEMO
+            </div>
+
+            <div class="logo">
+                LT
+            </div>
+
+            <h1>
+                Student Portal
+            </h1>
+
+            <p class="subtitle">
+                Sign in to continue to your student dashboard
+            </p>
+
+            <div class="warning">
+
+                <strong>
+                    Training URL:
+                </strong>
+
+                student-login-demo.local
+
+            </div>
+
+
+            <form method="POST">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    placeholder="Enter demo username"
+                    autocomplete="off"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Enter any demo password"
+                    autocomplete="off"
+                    required
+                >
+
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p class="note">
+
+                Training only.
+                Never enter your real password
+                into an unknown page.
+
+            </p>
+
+        </section>
+
+
+        {% else %}
+
+
+        <section class="card result">
+
+            <div class="result-icon">
+                !
+            </div>
+
+
+            <div class="badge danger">
+                PHISHING SIMULATION
+            </div>
+
+
+            <h2>
+                This was a fake login page.
+            </h2>
+
+
+            <p class="subtitle">
+
+                This is an educational simulation.
+
+                Your entered data was not stored
+                or sent anywhere.
+
+            </p>
+
+
+            <div class="lesson">
+
+                <strong>
+                    Awareness lesson:
+                </strong>
+
+                Your credentials were not collected.
+
+            </div>
+
+
+            <h3>
+                What should you check?
+            </h3>
+
+
+            <div class="tips">
+
+
+                <div class="tip">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+
+                        <h4>
+                            Check the URL
+                        </h4>
+
+                        <p>
+
+                            Look carefully at the
+                            domain name and spelling.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tip">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <h4>
+                            Do not trust appearance
+                        </h4>
+
+                        <p>
+
+                            A professional-looking
+                            page can still be fake.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tip">
+
+                    <span>
+                        03
+                    </span>
+
+                    <div>
+
+                        <h4>
+                            Protect your password
+                        </h4>
+
+                        <p>
+
+                            Never enter your real
+                            password on an unknown website.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tip">
+
+                    <span>
+                        04
+                    </span>
+
+                    <div>
+
+                        <h4>
+                            Verify the source
+                        </h4>
+
+                        <p>
+
+                            Visit the official website
+                            directly instead of following
+                            suspicious links.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <a href="/" class="button">
+
+                Run Demo Again
+
+            </a>
+
+        </section>
+
+        {% endif %}
+
+
+        <footer>
+
+            Login Trap
+            •
+            Safe Phishing Awareness Project
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
